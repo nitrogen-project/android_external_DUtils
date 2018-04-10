@@ -1030,7 +1030,7 @@ public class ActionHandler {
                     int ident = systemUIRes.getIdentifier("app_killed_message", DUActionUtils.STRING, DUActionUtils.PACKAGE_SYSTEMUI);
                     String toastMsg = systemUIRes.getString(ident, pkgName);
                     Context ctx = getPackageContext(context, DUActionUtils.PACKAGE_SYSTEMUI);
-                    Toast.makeText(ctx, toastMsg, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx != null ? ctx : context, toastMsg, Toast.LENGTH_SHORT).show();
                     return;
                 } else {
                     // make a "didnt kill anything" toast?
